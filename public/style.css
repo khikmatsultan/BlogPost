@@ -28,10 +28,3 @@ input, textarea {
     padding: 8px;
 }
 
-button {
-    padding: 8px 15px;
-    background: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}

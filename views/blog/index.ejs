@@ -7,6 +7,9 @@
 <body>
     <h1>Blog Posts</h1>
     <a href="/blog/new">Create New Post</a>
+
+
+
     
     <% posts.forEach(post => { %>
         <div class="post">
@@ -14,9 +17,17 @@
             <p><%= post.content %></p>
             <a href="/blog/<%= post.id %>/edit">Edit</a> 
 
+
+        <form action="/blog/<%= post.id %>/delete" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+
+
+
+
+
         </div>
     <% }); %>
-
 
 
 </body>

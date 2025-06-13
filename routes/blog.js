@@ -30,27 +30,10 @@ router.post('/', (req, res) => {
     res.redirect('/blog');
 });
 
-// GET edit form (place this with your other GET routes)              //////////////////////////////////////////
-router.get('/:id/edit', (req, res) => {
-    const postId = parseInt(req.params.id);
-    const post = blogPosts.find(post => post.id === postId);
-    res.render('blog/edit', { post: post });
-});
-
-// POST handle update (place this with your other POST routes)              /////////////////////////////////////
-router.post('/:id/update', (req, res) => {
-    const postId = parseInt(req.params.id);
-    const updatedPost = {
-        id: postId,
-        title: req.body.title,
-        content: req.body.content
-    };
-    blogPosts = blogPosts.map(post => 
-        post.id === postId ? updatedPost : post
-    );
+router.post('/:id/delete', (req, res) => {
+    blogPosts = blogPosts.filter(post => post.id !== parseInt(req.params.id));
     res.redirect('/blog');
 });
-
 
 
 
