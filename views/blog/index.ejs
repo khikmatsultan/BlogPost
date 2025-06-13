@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <a href="/blog/new">Create New Post</a>
+    
+    <% posts.forEach(post => { %>
+        <div class="post">
+            <h2><%= post.title %></h2>
+            <p><%= post.content %></p>
+        </div>
+    <% }); %>
+</body>
+</html>
