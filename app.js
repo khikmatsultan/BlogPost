@@ -4,6 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const blogRoutes = require('./routes/blog');
+const mongoose = require('mongoose');
 
 
 const app = express();
@@ -26,7 +27,15 @@ app.get('/', (req,res)=>
     res.render('index', {title:'Home'});
 });
 
+// to connect mongodb
 
+
+
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/blogDB')
+    .then(()=>console.log('connected to local MongoDB'))
+    .catch(err => console.error('Connection error:',err));
 
 
 
